@@ -4,7 +4,7 @@
 #
 Name     : perl-Apache-Session
 Version  : 1.93
-Release  : 3
+Release  : 4
 URL      : https://cpan.metacpan.org/authors/id/C/CH/CHORNY/Apache-Session-1.93.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/C/CH/CHORNY/Apache-Session-1.93.tar.gz
 Summary  : A persistence framework for session data
@@ -65,36 +65,36 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.26.1/Apache/Session.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Apache/Session/DB_File.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Apache/Session/File.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Apache/Session/Flex.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Apache/Session/Generate/MD5.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Apache/Session/Generate/ModUniqueId.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Apache/Session/Generate/ModUsertrack.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Apache/Session/Informix.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Apache/Session/Lock/File.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Apache/Session/Lock/MySQL.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Apache/Session/Lock/Null.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Apache/Session/Lock/Semaphore.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Apache/Session/Lock/Sybase.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Apache/Session/MySQL.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Apache/Session/MySQL/NoLock.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Apache/Session/Oracle.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Apache/Session/Postgres.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Apache/Session/Serialize/Base64.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Apache/Session/Serialize/Storable.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Apache/Session/Serialize/Sybase.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Apache/Session/Serialize/UUEncode.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Apache/Session/Store/DBI.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Apache/Session/Store/DB_File.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Apache/Session/Store/File.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Apache/Session/Store/Informix.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Apache/Session/Store/MySQL.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Apache/Session/Store/Oracle.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Apache/Session/Store/Postgres.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Apache/Session/Store/Sybase.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Apache/Session/Sybase.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Apache/Session.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Apache/Session/DB_File.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Apache/Session/File.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Apache/Session/Flex.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Apache/Session/Generate/MD5.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Apache/Session/Generate/ModUniqueId.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Apache/Session/Generate/ModUsertrack.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Apache/Session/Informix.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Apache/Session/Lock/File.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Apache/Session/Lock/MySQL.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Apache/Session/Lock/Null.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Apache/Session/Lock/Semaphore.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Apache/Session/Lock/Sybase.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Apache/Session/MySQL.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Apache/Session/MySQL/NoLock.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Apache/Session/Oracle.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Apache/Session/Postgres.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Apache/Session/Serialize/Base64.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Apache/Session/Serialize/Storable.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Apache/Session/Serialize/Sybase.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Apache/Session/Serialize/UUEncode.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Apache/Session/Store/DBI.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Apache/Session/Store/DB_File.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Apache/Session/Store/File.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Apache/Session/Store/Informix.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Apache/Session/Store/MySQL.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Apache/Session/Store/Oracle.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Apache/Session/Store/Postgres.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Apache/Session/Store/Sybase.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Apache/Session/Sybase.pm
 
 %files dev
 %defattr(-,root,root,-)
