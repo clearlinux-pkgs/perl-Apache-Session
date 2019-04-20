@@ -4,7 +4,7 @@
 #
 Name     : perl-Apache-Session
 Version  : 1.93
-Release  : 10
+Release  : 11
 URL      : https://cpan.metacpan.org/authors/id/C/CH/CHORNY/Apache-Session-1.93.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/C/CH/CHORNY/Apache-Session-1.93.tar.gz
 Summary  : A persistence framework for session data
