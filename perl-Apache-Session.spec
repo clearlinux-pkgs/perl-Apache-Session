@@ -4,12 +4,14 @@
 #
 Name     : perl-Apache-Session
 Version  : 1.93
-Release  : 12
+Release  : 13
 URL      : https://cpan.metacpan.org/authors/id/C/CH/CHORNY/Apache-Session-1.93.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/C/CH/CHORNY/Apache-Session-1.93.tar.gz
 Summary  : A persistence framework for session data
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
+Requires: perl-Apache-Session-perl = %{version}-%{release}
+Requires: perl(DB_File)
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Sub::Uplevel)
 BuildRequires : perl(Test::Deep)
@@ -23,19 +25,30 @@ BuildRequires : perl(Test::Exception)
 Summary: dev components for the perl-Apache-Session package.
 Group: Development
 Provides: perl-Apache-Session-devel = %{version}-%{release}
+Requires: perl-Apache-Session = %{version}-%{release}
 
 %description dev
 dev components for the perl-Apache-Session package.
 
 
+%package perl
+Summary: perl components for the perl-Apache-Session package.
+Group: Default
+Requires: perl-Apache-Session = %{version}-%{release}
+
+%description perl
+perl components for the perl-Apache-Session package.
+
+
 %prep
 %setup -q -n Apache-Session-1.93
+cd %{_builddir}/Apache-Session-1.93
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -45,7 +58,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -65,36 +78,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/DB_File.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/File.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Flex.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Generate/MD5.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Generate/ModUniqueId.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Generate/ModUsertrack.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Informix.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Lock/File.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Lock/MySQL.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Lock/Null.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Lock/Semaphore.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Lock/Sybase.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/MySQL.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/MySQL/NoLock.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Oracle.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Postgres.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Serialize/Base64.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Serialize/Storable.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Serialize/Sybase.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Serialize/UUEncode.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Store/DBI.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Store/DB_File.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Store/File.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Store/Informix.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Store/MySQL.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Store/Oracle.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Store/Postgres.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Store/Sybase.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Sybase.pm
 
 %files dev
 %defattr(-,root,root,-)
@@ -127,3 +110,36 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/share/man/man3/Apache::Session::Store::Postgres.3
 /usr/share/man/man3/Apache::Session::Store::Sybase.3
 /usr/share/man/man3/Apache::Session::Sybase.3
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/DB_File.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/File.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Flex.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Generate/MD5.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Generate/ModUniqueId.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Generate/ModUsertrack.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Informix.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Lock/File.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Lock/MySQL.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Lock/Null.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Lock/Semaphore.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Lock/Sybase.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/MySQL.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/MySQL/NoLock.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Oracle.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Postgres.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Serialize/Base64.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Serialize/Storable.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Serialize/Sybase.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Serialize/UUEncode.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Store/DBI.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Store/DB_File.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Store/File.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Store/Informix.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Store/MySQL.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Store/Oracle.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Store/Postgres.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Store/Sybase.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Apache/Session/Sybase.pm
