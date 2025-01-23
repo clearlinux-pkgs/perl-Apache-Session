@@ -1,4 +1,5 @@
 1.94
+perl(Digest::MD5)
 perl(Sub::Uplevel)
 perl(Test::Deep)
 perl(Test::Exception)
